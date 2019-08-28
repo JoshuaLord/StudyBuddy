@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
+class LoginApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -84,6 +82,7 @@ class LoginFormState extends State<LoginFormPage> {
                       if (value.isEmpty) {
                         return 'Please enter your Username.';
                       }
+                      return value;
                     },
                     decoration: InputDecoration(
                       labelText: 'Username',
@@ -101,6 +100,7 @@ class LoginFormState extends State<LoginFormPage> {
                       if (value.isEmpty) {
                         return 'Please enter your password';
                       }
+                      return value;
                     },
                     decoration: InputDecoration(
                       labelText: 'Password',
@@ -166,6 +166,7 @@ class SignupFormState extends State<SignupFormPage> {
                 
                   RegExp re = RegExp(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)");
                   if (!re.hasMatch(value)) return 'Please Enter a Valid Email Address';
+                  return value;
                 },
                 decoration: InputDecoration(
                   labelText: 'School Email',
@@ -182,6 +183,7 @@ class SignupFormState extends State<SignupFormPage> {
                 textAlign: TextAlign.center,
                 validator: (value) {
                   if (value.isEmpty) return 'Enter your first name';
+                  return value;
                 },
                 decoration: InputDecoration(
                   labelText: 'First Name',
@@ -198,6 +200,7 @@ class SignupFormState extends State<SignupFormPage> {
                 textAlign: TextAlign.center,
                 validator: (value) {
                   if (value.isEmpty) return 'Enter your last name';
+                  return value;
                 },
                 decoration: InputDecoration(
                   labelText: 'Last Name',
@@ -218,6 +221,7 @@ class SignupFormState extends State<SignupFormPage> {
 
                   RegExp re = RegExp(r"^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$");
                   if (!re.hasMatch(value)) return 'Must contain one letter';
+                  return value;
                 },
                 decoration: InputDecoration(
                   labelText: 'Password',
@@ -243,6 +247,7 @@ class SignupFormState extends State<SignupFormPage> {
                     } else {
                       return 'Type a Valid Password';
                     }
+                    return value;
                 },
                 decoration: InputDecoration(
                   labelText: 'Retype Password',
@@ -275,6 +280,7 @@ class SignupFormState extends State<SignupFormPage> {
                   if (value.isEmpty) {
                     return 'Please Enter Your Confirmation Code';
                   }
+                  return value;
                 },
                 decoration: InputDecoration(
                   labelText: 'Confirmation Code',
