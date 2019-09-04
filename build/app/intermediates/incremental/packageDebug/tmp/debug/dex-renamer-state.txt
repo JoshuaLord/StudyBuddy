@@ -1,4 +1,0 @@
-#Tue May 21 11:54:03 EDT 2019
-base.0=/Users/michaelmoses/Documents/COSC425/interface_designV1/interface_build/build/app/intermediates/transforms/dexMerger/debug/0
-path.0=classes.dex
-renamed.0=classes.dex
