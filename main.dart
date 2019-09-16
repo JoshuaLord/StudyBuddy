@@ -3,5 +3,5 @@ import 'package:flutter/cupertino.dart';
 import 'login.dart';
 
 void main() {
-  runApp(new LoginApp());
+  runApp(new StartPageWidget());
 }
