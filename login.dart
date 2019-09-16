@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'home.dart';
 
-class LoginApp extends StatelessWidget {
+class StartPageWidget extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -12,13 +13,13 @@ class LoginApp extends StatelessWidget {
         appBar: AppBar(
           title: Text(appTitle),
         ),
-        body: LoadPage(),
+        body: LoginPage(),
       ),
     );
   }
 }
 
-class LoadPage extends StatelessWidget {
+class StartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +31,7 @@ class LoadPage extends StatelessWidget {
               /* LOGIN BUTTON */
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => LoginFormPage()));
+                    MaterialPageRoute(builder: (context) => LoginPage()));
               },
               child: const Text('Login'),
             ),
@@ -41,7 +42,7 @@ class LoadPage extends StatelessWidget {
               /* SIGN UP BUTTON */
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SignupFormPage()));
+                    MaterialPageRoute(builder: (context) => SignupPage()));
               },
               child: const Text('Sign Up'),
             ),
@@ -52,14 +53,12 @@ class LoadPage extends StatelessWidget {
   }
 }
 
-class LoginFormPage extends StatefulWidget {
+class LoginPage extends StatefulWidget {
   @override
-  LoginFormState createState() {
-    return LoginFormState();
-  }
+  State createState() => new LoginPageState();
 }
 
-class LoginFormState extends State<LoginFormPage> {
+class LoginPageState extends State<LoginPage> {
   final _loginFormKey = GlobalKey<FormState>();
 
   @override
@@ -114,7 +113,9 @@ class LoginFormState extends State<LoginFormPage> {
                   RaisedButton(
                     child: Text('Submit'),
                     onPressed: () {
-                      /* Navigator.push (context, MaterialPageRoute(builder: (context) => LoginRoute())); */
+                      Navigator.pushReplacement(context, MaterialPageRoute<Null>(builder: (BuildContext context) {
+                        return new HomePage();
+                      }));
                       /* TODO check login with database */
                     },
                   )
@@ -122,14 +123,12 @@ class LoginFormState extends State<LoginFormPage> {
   }
 }
 
-class SignupFormPage extends StatefulWidget {
+class SignupPage extends StatefulWidget {
   @override
-  SignupFormState createState() {
-    return SignupFormState();
-  }
+  State createState() => new SignupPageState();
 }
 
-class SignupFormState extends State<SignupFormPage> {
+class SignupPageState extends State<SignupPage> {
   List<GlobalKey<FormState>> _formKeys = [
     GlobalKey<FormState>(),
     GlobalKey<FormState>(),
