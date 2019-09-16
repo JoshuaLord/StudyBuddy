@@ -5,6 +5,6 @@ import 'package:flutter/cupertino.dart';
 import 'chat.dart';
 
 void main() {
-  runApp(new FriendlyChatApp());
+  runApp(new LoginApp());
 }
 
