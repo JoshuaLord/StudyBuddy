@@ -30,8 +30,7 @@ class StartPage extends StatelessWidget {
             RaisedButton(
               /* LOGIN BUTTON */
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => LoginPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
               },
               child: const Text('Login'),
             ),
@@ -41,8 +40,7 @@ class StartPage extends StatelessWidget {
             RaisedButton(
               /* SIGN UP BUTTON */
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SignupPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => SignupPage()));
               },
               child: const Text('Sign Up'),
             ),
