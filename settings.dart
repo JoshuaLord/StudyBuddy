@@ -1,9 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-class SettingsPage extends StatelessWidget {
+import 'sidebar_drawer.dart';
+
+class SettingsPage extends StatefulWidget {
+  State createState() => new SettingsPageState();
+}
+
+class SettingsPageState extends State<SettingsPage> {
+  SidebarDrawer sidebarDrawer = new SidebarDrawer(Page.SETTINGS);
+
   @override 
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Settings")
+      ),
+      drawer: sidebarDrawer.getDrawer(),
+    );
   }
 }
