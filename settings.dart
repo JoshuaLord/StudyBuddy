@@ -16,7 +16,7 @@ class SettingsPageState extends State<SettingsPage> {
       appBar: AppBar(
         title: Text("Settings")
       ),
-      drawer: sidebarDrawer.getDrawer(),
+      drawer: sidebarDrawer.getDrawer()
     );
   }
 }
